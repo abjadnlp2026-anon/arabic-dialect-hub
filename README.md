@@ -1,6 +1,6 @@
-# 🌍 Darija Arabic Learning Platform
+# 🌍 Arabic Dialect Hub
 
-A comprehensive web application designed to help Moroccan Darija speakers learn other Arabic dialects including Lebanese, Syrian, Emirati, Saudi, and Modern Standard Arabic (MSA).
+A comprehensive web application for cross-dialectal Arabic learning, enabling speakers of Moroccan Darija to learn other Arabic dialects including Lebanese, Syrian, Emirati, Saudi, and Modern Standard Arabic (MSA).
 
 ![React](https://img.shields.io/badge/React-18.0-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
@@ -10,7 +10,7 @@ A comprehensive web application designed to help Moroccan Darija speakers learn 
 
 ## 🌟 Live Demo
 
-**[Try the app now at darija-tr.netlify.app](https://darija-tr.netlify.app)**
+**[Try the app now at arabic-dialect-hub.netlify.app](https://arabic-dialect-hub.netlify.app)**
 
 ## 🎯 Features
 
@@ -22,7 +22,7 @@ A comprehensive web application designed to help Moroccan Darija speakers learn 
 - **✨ Smart Learning**: Only shows unmastered phrases, with ability to mark known phrases
 
 ### User Experience
-- **🔐 Secure Authentication**: Email/password and GitHub OAuth authentication
+- **🔐 Secure Authentication**: Email/password authentication
 - **💾 Cloud Sync**: All progress saved to Supabase with real-time updates
 - **📱 Mobile Responsive**: Fully optimized for all devices with adaptive layouts
 - **🎨 Modern UI**: Clean, intuitive interface with TailwindCSS
@@ -43,8 +43,8 @@ A comprehensive web application designed to help Moroccan Darija speakers learn 
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/saleml/darija-arabic-learning.git
-cd darija-arabic-app
+git clone https://github.com/abjadnlp2026-anon/arabic-dialect-hub.git
+cd arabic-dialect-hub
 ```
 
 2. **Install dependencies**
@@ -73,7 +73,7 @@ The app will be available at `http://localhost:5173`
 ## 📖 User Guide
 
 ### Getting Started
-1. **Sign Up**: Create an account using email/password or GitHub
+1. **Sign Up**: Create an account using email/password
 2. **Language Setup**: Choose your source dialect (what you speak) and target dialect (what you want to learn)
 3. **Start Learning**: Navigate to `/hub` to begin your journey
 
@@ -116,14 +116,12 @@ The app will be available at `http://localhost:5173`
 - **TypeScript** - Full type safety across the application
 - **Vite** - Lightning-fast HMR and build times
 - **TailwindCSS** - Utility-first styling
-- **React Router v6** - Client-side routing
+- **React Router v7** - Client-side routing
 - **Lucide Icons** - Beautiful, consistent icons
 
 ### Backend Services
 - **Clerk** - Authentication & user management
   - Email/password authentication
-  - GitHub OAuth (working)
-  - Google OAuth (requires custom credentials)
 - **Supabase** - Database & real-time sync
   - PostgreSQL database
   - Row-level security
@@ -156,18 +154,15 @@ phrase_progress:
 - ✅ Fixed schema mismatches between code and database
 - ✅ Resolved React Error #31 (object rendering)
 - ✅ Fixed double-counting in progress tracking
-- ✅ GitHub OAuth fully functional
 - ✅ Clean URL structure implemented
 
 ### Authentication Status
 - ✅ **Email/Password**: Fully working
-- ✅ **GitHub OAuth**: Fully working
 - ✅ **Password Reset**: Email recovery working
-- ⚠️ **Google OAuth**: Disabled (requires Google Cloud setup)
 
 ## 🚢 Deployment
 
-### Deploy to Netlify (Recommended)
+### Deploy to Netlify
 
 1. **Push to GitHub**:
 ```bash
@@ -205,14 +200,6 @@ VITE_SUPABASE_ANON_KEY=eyJ...
 - **Categories**: 18 learning categories
 - **Cultural Cards**: 6 topics with regional insights
 
-## 🐛 Known Issues & Solutions
-
-| Issue | Status | Solution |
-|-------|--------|----------|
-| Google OAuth not working | ⚠️ Known | Requires Google Cloud Console setup |
-| user_progress table 404 | ⚠️ Minor | Run cleanup script in Supabase |
-| CAPTCHA errors | ✅ Fixed | Bot protection disabled in Clerk |
-
 ## 📝 Scripts
 
 ```bash
@@ -238,14 +225,9 @@ MIT License - feel free to use this project for learning or teaching Arabic dial
 
 ## 🙏 Acknowledgments
 
-- Arabic linguistic community for phrase validation
-- Open source contributors
-- Beta testers and early users
-- Claude AI for development assistance
-
-## 👨‍💻 Author
-
-Created with ❤️ by Salem Lahlou
+- Native Arabic speakers who validated translations
+- Open source community
+- Arabic linguistics research community
 
 ## 🗺️ Roadmap
 
@@ -258,7 +240,7 @@ Created with ❤️ by Salem Lahlou
 - [x] Cloud sync
 - [x] Mobile responsive design
 
-### Coming Soon
+### Future Enhancements
 - [ ] Audio pronunciations
 - [ ] Dark mode
 - [ ] More quiz types
@@ -268,4 +250,4 @@ Created with ❤️ by Salem Lahlou
 
 ---
 
-**Ready to start your Arabic learning journey?** [Visit darija-tr.netlify.app](https://darija-tr.netlify.app)
+**Ready to start your cross-dialectal Arabic learning journey?** [Visit arabic-dialect-hub.netlify.app](https://arabic-dialect-hub.netlify.app)
