@@ -1,0 +1,172 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production build
+/dist
+/build
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.backup
+*.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea
+.DS_Store
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Package manager locks (keep one)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+tmp/
+temp/
+
+# Cache directories
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Testing artifacts
+cypress/videos
+cypress/screenshots
+__snapshots__/
+
+# Build artifacts
+*.tsbuildinfo
+.eslintcache
+.stylelintcache
+
+# Netlify
+.netlify/
+
+# Vercel
+.vercel/
+
+# Debug
+debug/
+*.pid
+*.seed
+*.pid.lock
+
+# Documentation build
+docs/.vuepress/dist
+docs/.docusaurus
+docs/build
+
+# Misc
+*.pem
+*.key
+*.cert
+*.crt
+
+# Database dumps
+*.sql
+*.sqlite
+*.db
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Project specific
+/research/raw_data/
+/backups/
+/exports/
+automated-test.html
+test-*.html
+*-test.html
+*.test.html
+
+# Local development files
+.env.development
+.env.production
+local-config.json
+dev-notes.md
+
+# User-specific files
+user-data/
+user-progress/
+*.local.json
+
+# Sensitive data
+secrets/
+credentials/
+private/
+
+# Keep these files
+!.gitkeep
+!README.md
+!LICENSE
+!package.json
+!package-lock.json
+!tsconfig.json
+!vite.config.ts
+!index.html
+!DEVELOPMENT_HISTORY.md
+!MAINTENANCE_GUIDE.md
