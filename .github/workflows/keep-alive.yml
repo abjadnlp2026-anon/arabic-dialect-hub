@@ -1,22 +1,39 @@
-name: Keep Supabase Active
+name: Keep Supabase Awake
 
 on:
   schedule:
-    # Run every 6 days (to stay under 7-day inactivity)
-    - cron: '0 0 */6 * *'
-  workflow_dispatch: # Allow manual trigger
+    # Every 2 days at 03:00 UTC
+    - cron: '0 3 */2 * *'
+  workflow_dispatch:
 
 jobs:
   keep-alive:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping Supabase
+      - name: Keep-alive INSERT (touch)
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          # Use ANON if you added the policy above; otherwise use SERVICE_ROLE
+          SUPABASE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE }}
         run: |
-          curl -X GET \
-            "${SUPABASE_URL}/rest/v1/phrases?limit=1" \
-            -H "apikey: ${SUPABASE_ANON_KEY}" \
-            -H "Authorization: Bearer ${SUPABASE_ANON_KEY}"
-          echo "Supabase pinged successfully at $(date)"
+          set -euo pipefail
+          # 1) small write
+          curl -sS -X POST "$SUPABASE_URL/rest/v1/keep_alive" \
+            -H "apikey: $SUPABASE_KEY" \
+            -H "Authorization: Bearer $SUPABASE_KEY" \
+            -H "Content-Type: application/json" \
+            -H "Prefer: return=minimal" \
+            --data '{"source":"gh"}'
+
+          # 2) light cleanup (optional): delete rows older than 30 days
+          THIRTY_DAYS_AGO="$(date -u -d '30 days ago' +%Y-%m-%dT%H:%M:%SZ)"
+          curl -sS -X DELETE "$SUPABASE_URL/rest/v1/keep_alive?touched_at=lt.$THIRTY_DAYS_AGO" \
+            -H "apikey: $SUPABASE_KEY" \
+            -H "Authorization: Bearer $SUPABASE_KEY"
+
+          # 3) quick read (belt-and-suspenders)
+          curl -sS "$SUPABASE_URL/rest/v1/keep_alive?select=id&limit=1" \
+            -H "apikey: $SUPABASE_KEY" \
+            -H "Authorization: Bearer $SUPABASE_KEY" >/dev/null
+
+          echo "Supabase pinged successfully at $(date -u)"
